@@ -2,35 +2,34 @@ import java.util.Scanner;
 
 public class App {
 
-	private static final String Andrey = null;
-
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Your Language:");
 		String language = scan.nextLine();
 		System.out.print("Your male/female:");
-		String maleorfemaleormarried = scan.nextLine();
+		String sex = scan.nextLine();
+		System.out.println("Your old:");
+		String status = scan.nextLine();
 
 		if (language.equals("En")) {
 			LocalisationInterface english = new EnglishLocalisation();
-			english.sayHello("!", maleorfemaleormarried);
+			english.sayHello("!", sex);
 		}
 
 		if (language.equals("Ua")) {
-			LocalisationInterface english = new UaLocalisation();
-			english.sayHello("!", maleorfemaleormarried);
+			LocalisationInterface ua = new UaLocalisation();
+			ua.sayHello("!", sex);
 		}
 
 		if (language.equals("Es")) {
-			LocalisationInterface english = new EspanolLocalisation();
-			english.sayHello("!",maleorfemaleormarried);
-		} 
-		
-		LocalisationInterface english = new EspanolLocalisation();
- 
-		    
-		
+			LocalisationInterface espanol = new EspanolLocalisation();
+			espanol.sayHello("!", sex);
 		}
 
-	
+		if (status.equals("27")) {
+			LocalisationInterface english = new EnglishLocalisation();
+			english.basicOutput("notes", sex);
+		}
 	}
+
+}
