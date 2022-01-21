@@ -1,3 +1,6 @@
+import java.security.Timestamp;
+import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class App {
@@ -8,28 +11,40 @@ public class App {
 		String language = scan.nextLine();
 		System.out.print("Your male/female:");
 		String sex = scan.nextLine();
-		System.out.println("Your old:");
-		String status = scan.nextLine();
+		System.out.println("Your age:");
+		int age = scan.nextInt();
+	
+		
 
 		if (language.equals("En")) {
 			LocalisationInterface english = new EnglishLocalisation();
-			english.sayHello("!", sex);
+			english.sayHello("!", sex, age);
+			
 		}
 
 		if (language.equals("Ua")) {
 			LocalisationInterface ua = new UaLocalisation();
-			ua.sayHello("!", sex);
+			ua.sayHello("!", sex, age);
 		}
 
 		if (language.equals("Es")) {
 			LocalisationInterface espanol = new EspanolLocalisation();
-			espanol.sayHello("!", sex);
+			espanol.sayHello("!", sex, age);
 		}
 
-		if (status.equals("27")) {
-			LocalisationInterface english = new EnglishLocalisation();
-			english.basicOutput("notes", sex);
+		
+		if(language.equals("Sc")) {
+			LocalisationInterface scottish = new ScottishLocalisation();
+			scottish.sayHello("!", sex, age);
 		}
-	}
+		
+		
 
-}
+			
+			
+		}
+		
+		}
+	
+
+
