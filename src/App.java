@@ -1,5 +1,3 @@
-import java.security.Timestamp;
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
@@ -13,13 +11,11 @@ public class App {
 		String sex = scan.nextLine();
 		System.out.println("Your age:");
 		int age = scan.nextInt();
-	
-		
 
 		if (language.equals("En")) {
 			LocalisationInterface english = new EnglishLocalisation();
 			english.sayHello("!", sex, age);
-			
+
 		}
 
 		if (language.equals("Ua")) {
@@ -32,19 +28,11 @@ public class App {
 			espanol.sayHello("!", sex, age);
 		}
 
-		
-		if(language.equals("Sc")) {
+		if (language.equals("Sc")) {
 			LocalisationInterface scottish = new ScottishLocalisation();
 			scottish.sayHello("!", sex, age);
 		}
-		
-		
 
-			
-			
-		}
-		
-		}
-	
+	}
 
-
+}
